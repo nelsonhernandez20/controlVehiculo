@@ -15,7 +15,7 @@
         <!-- cabeceros-->
         <jsp:include page="/WEB-INF/paginas/comunes/cabecero.jsp"></jsp:include>
 
-            <form action="${pageContext.request.contextPath}/ServletControlador?accion=modificar&idVehiculo=${vehiculo.idVehiculo}" method="POST" class="was-validated">
+            <form action="${pageContext.request.contextPath}/ServletControlador?accion=modificar&idVehiculo=${vehiculos.idVehiculo}" method="POST" class="was-validated">
 
 
             <!-- botones de navegacion para editar -->
