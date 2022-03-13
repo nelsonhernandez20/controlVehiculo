@@ -55,15 +55,16 @@ public class VehiculoDAO {
             stmt = conn.prepareStatement(SQL_SELECT_BY_ID);
             stmt.setInt(1, vehiculo.getIdVehiculo());
             rs = stmt.executeQuery();
-            rs.absolute(1);
+             while (rs.next()) {
+                int idVehiculo = rs.getInt("id_vehiculo");
+                String marca = rs.getString("marca");
+                String placa = rs.getString("placa");
+                String nombre = rs.getString("nombre");
 
-            String marca = rs.getString("marca");
-            String placa = rs.getString("placa");
-            String nombre = rs.getString("nombre");
+                vehiculo = new Vehiculo(idVehiculo, marca, placa, nombre);
+                
 
-            vehiculo.setMarca(marca);
-            vehiculo.setPlaca(placa);
-            vehiculo.setNombre(nombre);
+            }
 
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);

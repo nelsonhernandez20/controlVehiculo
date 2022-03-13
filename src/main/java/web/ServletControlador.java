@@ -159,9 +159,19 @@ public class ServletControlador extends HttpServlet {
     
     private void editarVehiculo(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException, ClassNotFoundException{
         int idVehiculo = Integer.parseInt(request.getParameter("idVehiculo"));
-        Vehiculo vehiculo = new VehiculoDAO().encontrar(new Vehiculo(idVehiculo));
-        request.setAttribute("vehiculo", vehiculo);
-        String jspEditar = "/WEB-INF/paginas/cliente/editarCliente.jsp";
-        request.getRequestDispatcher(jspEditar).forward(request, response);
+        Vehiculo vehiculos = new VehiculoDAO().encontrar(new Vehiculo(idVehiculo));
+        String nombre = vehiculos.getNombre();
+        int id = vehiculos.getIdVehiculo();
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("vehiculos", vehiculos);
+        sesion.setAttribute("idVehiculo", idVehiculo);
+        sesion.setAttribute("id", id);
+        sesion.setAttribute("nombre", nombre);
+        response.sendRedirect("editarCliente.jsp");
+//        
+//        request.setAttribute("vehiculos", vehiculos);
+//        String jspEditar = "editarCliente.jsp";
+//        request.getRequestDispatcher(jspEditar).forward(request, response);
+        
     }
 }

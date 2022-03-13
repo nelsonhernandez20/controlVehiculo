@@ -9,6 +9,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/bf61009fa7.js" crossorigin="anonymous"></script>
         <title>Control de clientes</title>
+        
     </head>
     <body>
         <!-- cabeceros-->
@@ -31,16 +32,16 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="marca">Marca</label>
-                                            <input type="text" class="form-control" name="marca" required value="${vehiculo.marca}">
+                                            <input type="text" class="form-control" name="marca" required value="${vehiculos.marca}">
                                         </div>
                                         <div class="form-group">
                                             <label for="placa">Placa</label>
-                                            <input type="text" class="form-control" name="placa" required value="${vehiculo.placa}">
+                                            <input type="text" class="form-control" name="placa" required value="${vehiculos.placa}">
                                         </div>
                                         <div class="form-group">
                                             <label for="nombre">Nombre</label>
-                                            <input type="text" class="form-control" name="nombre" required value="${vehiculo.nombre}">
-                                            <label>${vehiculo.nombre}</label>
+                                            <input type="text" class="form-control" name="nombre" required value="${vehiculos.nombre}">
+                                           
                                         </div>
                                     </div>
                                 </div>
